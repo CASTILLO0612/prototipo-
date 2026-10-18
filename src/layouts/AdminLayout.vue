@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { LayoutDashboard, ClipboardList, Boxes, Tag, BarChart3, Users, LogOut, Lock } from 'lucide-vue-next'
 import { ROLE_ACCESS, state } from '../store'
+import { asset } from '../data'
 
 const route = useRoute()
 const router = useRouter()
@@ -29,7 +30,7 @@ function logout() {
   <div class="flex min-h-[calc(100vh-30px)] flex-col md:flex-row">
     <aside class="border-b border-line bg-white md:w-56 md:shrink-0 md:border-b-0 md:border-r">
       <div class="hidden items-center gap-2.5 px-4 py-5 md:flex">
-        <img src="/img/logo.jpg" alt="Copo Ice" class="h-9 w-9 rounded-full ring-1 ring-line" />
+        <img :src="asset('img/logo.jpg')" alt="Copo Ice" class="h-9 w-9 rounded-full ring-1 ring-line" />
         <div class="leading-tight">
           <p class="font-display font-bold text-cyan-dark">Copo Ice</p>
           <p class="text-[11px] text-muted">{{ state.role }}</p>

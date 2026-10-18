@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ShoppingBag, PackageSearch, MapPin, Phone, AtSign } from 'lucide-vue-next'
 import CartDrawer from '../components/CartDrawer.vue'
-import { BUSINESS } from '../data'
+import { BUSINESS, asset } from '../data'
 import { cartCount, ui } from '../store'
 </script>
 
@@ -9,7 +9,7 @@ import { cartCount, ui } from '../store'
   <header class="sticky top-0 z-40 border-b border-line bg-cream/90 backdrop-blur">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
       <router-link to="/" class="flex items-center gap-2.5">
-        <img src="/img/logo.jpg" alt="Logo de Copo Ice" class="h-10 w-10 rounded-full object-cover ring-1 ring-line" />
+        <img :src="asset('img/logo.jpg')" alt="Logo de Copo Ice" class="h-10 w-10 rounded-full object-cover ring-1 ring-line" />
         <div class="leading-tight">
           <p class="font-display text-lg font-bold text-cyan-dark">Copo Ice</p>
           <p class="text-[11px] text-muted">{{ BUSINESS.slogan }}</p>

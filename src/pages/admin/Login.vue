@@ -2,6 +2,7 @@
 import { useRouter } from 'vue-router'
 import { ShieldCheck, ClipboardList, Eye, ArrowLeft } from 'lucide-vue-next'
 import { ROLE_ACCESS, state } from '../../store'
+import { asset } from '../../data'
 import type { Role } from '../../types'
 
 const router = useRouter()
@@ -19,7 +20,7 @@ function enter(r: Role) {
 
 <template>
   <div class="mx-auto flex min-h-[80vh] max-w-md flex-col justify-center px-4 py-10">
-    <img src="/img/logo.jpg" alt="Copo Ice" class="mx-auto mb-5 h-20 w-20 rounded-full ring-1 ring-line" />
+    <img :src="asset('img/logo.jpg')" alt="Copo Ice" class="mx-auto mb-5 h-20 w-20 rounded-full ring-1 ring-line" />
     <h1 class="text-center font-display text-2xl font-bold">Panel interno</h1>
     <p class="mb-6 mt-1 text-center text-sm text-muted">Elige un rol para explorar la demostración.</p>
     <div class="space-y-2.5">

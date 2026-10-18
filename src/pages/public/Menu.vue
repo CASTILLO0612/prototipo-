@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import { Gift, Percent, Plus, Clock } from 'lucide-vue-next'
 import ProductModal from '../../components/ProductModal.vue'
 import { money, state } from '../../store'
+import { asset } from '../../data'
 import type { Product } from '../../types'
 
 const cats = ['Todos', 'Especiales', 'Clásicos'] as const
@@ -18,7 +19,7 @@ const activePromos = computed(() => state.promos.filter((p) => p.active))
 <template>
   <section class="mx-auto max-w-6xl px-4 pt-6">
     <div class="relative overflow-hidden rounded-3xl">
-      <img src="/img/banner.png" alt="Local de Copo Ice con raspados" class="h-56 w-full object-cover sm:h-72" />
+      <img :src="asset('img/banner.png')" alt="Local de Copo Ice con raspados" class="h-56 w-full object-cover sm:h-72" />
       <div class="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
       <div class="absolute bottom-5 left-5 right-5 text-white">
         <h1 class="font-display text-3xl font-bold sm:text-4xl">Frío que se antoja</h1>

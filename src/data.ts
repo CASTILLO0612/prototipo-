@@ -40,13 +40,20 @@ export const EXTRAS: Extra[] = [
   { id: 'torta', label: 'Torta al centro', price: 20, inv: { item: 'torta', qty: 1 } },
 ]
 
+export const asset = (path: string) => {
+  const b = import.meta.env.BASE_URL?.endsWith('/')
+    ? import.meta.env.BASE_URL
+    : (import.meta.env.BASE_URL || '') + '/'
+  return `${b}${path.replace(/^\//, '')}`
+}
+
 export const PRODUCTS: Product[] = [
   {
     id: 'oreo',
     name: 'Especial Oreo y Fresa',
     category: 'Especiales',
     desc: 'Galleta triturada, fresa natural y leche condensada.',
-    img: '/img/oreo.png',
+    img: asset('img/oreo.png'),
     base: 110,
     available: true,
   },
@@ -55,7 +62,7 @@ export const PRODUCTS: Product[] = [
     name: 'Enfrutado de Piña',
     category: 'Especiales',
     desc: 'Trozos de fresa y piña, granola y leche condensada.',
-    img: '/img/enfrutado.jpg',
+    img: asset('img/enfrutado.jpg'),
     base: 100,
     available: true,
   },
@@ -64,7 +71,7 @@ export const PRODUCTS: Product[] = [
     name: 'Enfrutado Piña y Fresa',
     category: 'Especiales',
     desc: 'Fresa fresca con leche condensada, sabor balanceado.',
-    img: '/img/pina-fresa.jpg',
+    img: asset('img/pina-fresa.jpg'),
     base: 100,
     available: true,
   },
@@ -73,7 +80,7 @@ export const PRODUCTS: Product[] = [
     name: 'Raspado de Pitahaya',
     category: 'Especiales',
     desc: 'Miel de pitahaya, 100% fruta natural.',
-    img: '/img/pitahaya.jpg',
+    img: asset('img/pitahaya.jpg'),
     base: 90,
     available: true,
   },
@@ -82,7 +89,7 @@ export const PRODUCTS: Product[] = [
     name: 'Raspado Relleno',
     category: 'Especiales',
     desc: 'Miel de leche con torta y coco rallado.',
-    img: '/img/relleno.jpg',
+    img: asset('img/relleno.jpg'),
     base: 95,
     available: true,
   },
@@ -91,7 +98,7 @@ export const PRODUCTS: Product[] = [
     name: 'Raspado de Leche',
     category: 'Clásicos',
     desc: 'El tradicional, con leche condensada.',
-    img: '/img/leche.jpg',
+    img: asset('img/leche.jpg'),
     base: 60,
     available: true,
   },
@@ -100,7 +107,7 @@ export const PRODUCTS: Product[] = [
     name: 'Raspado de Piña',
     category: 'Clásicos',
     desc: 'Piña acompañada de coco rallado.',
-    img: '/img/pina-coco.jpg',
+    img: asset('img/pina-coco.jpg'),
     base: 60,
     available: true,
   },
