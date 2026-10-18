@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && powershell -Command \"cd dist; Copy-Item index.html 404.html; New-Item -ItemType File -Force .nojekyll | Out-Null; git init; git checkout -b gh-pages; git add -A; git commit -m 'Deploy Copo Ice'; git remote add origin https://github.com/CASTILLO0612/prototipo-.git; git push -f origin gh-pages; Remove-Item -Recurse -Force .git\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
